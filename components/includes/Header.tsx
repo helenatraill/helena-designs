@@ -1,6 +1,4 @@
 import Link from 'next/link'
-import { GetStaticPropsContext } from 'next'
-import { getNextStaticProps } from '@faustjs/next'
 import { client, MenuLocationEnum } from '@client'
 import { MainNav } from '.'
 import styles from '@styles/modules/Header.module.css'
@@ -34,9 +32,3 @@ const Header = () => {
 }
 
 export default Header
-
-export async function getStaticProps(context: GetStaticPropsContext) {
-  return getNextStaticProps(context, {
-    client,
-  })
-}

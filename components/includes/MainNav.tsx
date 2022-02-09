@@ -1,6 +1,4 @@
 import Link from 'next/link'
-import { GetStaticPropsContext } from 'next'
-import { getNextStaticProps } from '@faustjs/next'
 import { client, MenuLocationEnum } from '@client'
 import styles from '@styles/modules/MainNav.module.css'
 
@@ -28,9 +26,3 @@ const MainNav = () => {
 }
 
 export default MainNav
-
-export async function getStaticProps(context: GetStaticPropsContext) {
-  return getNextStaticProps(context, {
-    client,
-  })
-}

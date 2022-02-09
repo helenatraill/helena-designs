@@ -1,7 +1,5 @@
 import Head from 'next/head'
 import { client } from '@client'
-import { GetStaticPropsContext } from 'next'
-import { getNextStaticProps } from '@faustjs/next'
 import { Header, Footer } from '@components/includes'
 
 export default function Layout(props) {
@@ -39,10 +37,4 @@ export default function Layout(props) {
       <Footer />
     </>
   )
-}
-
-export async function getStaticProps(context: GetStaticPropsContext) {
-  return getNextStaticProps(context, {
-    client,
-  })
 }

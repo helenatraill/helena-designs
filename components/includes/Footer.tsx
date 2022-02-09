@@ -1,5 +1,3 @@
-import { GetStaticPropsContext } from 'next'
-import { getNextStaticProps } from '@faustjs/next'
 import { client, MenuLocationEnum } from '@client'
 import styles from '@styles/modules/Footer.module.css'
 
@@ -67,9 +65,3 @@ const Footer = () => {
 }
 
 export default Footer
-
-export async function getStaticProps(context: GetStaticPropsContext) {
-  return getNextStaticProps(context, {
-    client,
-  })
-}
