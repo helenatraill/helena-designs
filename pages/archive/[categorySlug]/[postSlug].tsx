@@ -1,6 +1,6 @@
 import Layout from '@components/layouts/Layout'
-import { getNextServerSideProps, is404 } from '@faustjs/next'
-import { GetServerSidePropsContext } from 'next'
+import { getNextServerSideProps, getNextStaticProps, is404 } from '@faustjs/next'
+import { GetServerSidePropsContext, GetStaticPropsContext } from 'next'
 import { client } from '@client'
 import styles from '@styles/modules/Post.module.css'
 import { CategoryNav, MovePost } from '@components/includes'
@@ -32,17 +32,30 @@ export default function Page() {
             <div dangerouslySetInnerHTML={{ __html: post?.content() ?? '' }} />
           </div>
         </article>
-        
-        <MovePost />
       </Layout>
     </>
   )
 }
 
-export async function getServerSideProps(context: GetServerSidePropsContext) {
-  return getNextServerSideProps(context, {
+//export async function getServerSideProps(context: GetServerSidePropsContext) {
+  //return getNextServerSideProps(context, {
+    //Page,
+    //client,
+    //notFound: await is404(context, { client }),
+  //})
+//}
+
+export async function getStaticProps(context: GetStaticPropsContext) {
+  return getNextStaticProps(context, {
     Page,
     client,
     notFound: await is404(context, { client }),
   })
+}
+
+export function getStaticPaths() {
+  return {
+    paths: [],
+    fallback: 'blocking',
+  }
 }
