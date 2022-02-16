@@ -11,6 +11,6 @@ module.exports = {
   },
 
   experimental: {
-    concurrentFeatures: true,
+    //concurrentFeatures: true,
   },
 }
