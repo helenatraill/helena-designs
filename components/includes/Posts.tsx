@@ -38,7 +38,7 @@ export default function Posts() {
                       alt={post?.featuredImage?.node?.altText}
                       width={post?.featuredImage?.node?.mediaDetails?.width}
                       height={post?.featuredImage?.node?.mediaDetails?.height}
-                      objectFit="cover"
+                      //objectFit="cover"
                     />
                   </a>
                 </Link>
