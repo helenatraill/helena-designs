@@ -136,6 +136,7 @@ img {
 }
 
 .image-wrapper {
+  position: relative;
 
   & > span {
     display: block !important;
