@@ -20,7 +20,7 @@ export default function Page() {
         <article className={styles.post}>
           <div className={styles.image}>
             <div className="image-wrapper">
-              <img
+              <Image
                 src={post?.featuredImage?.node?.sourceUrl()}
                 alt={post?.featuredImage?.node?.altText}
                 width={post?.featuredImage?.node?.mediaDetails?.width}
