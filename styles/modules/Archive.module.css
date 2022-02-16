@@ -1,18 +1,11 @@
 .archive {
 
-  & a {
-
-    & span {
-      font-size: 0;
-
-      & img {
-        width: 100%;
-      }
-
-    }
+  & span {
+    font-size: 0;
   }
 
-  & img {
+  & .archive__image {
+    display: block;
     width: 100%;
   }
 }

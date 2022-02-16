@@ -28,7 +28,8 @@ export default function Layout(props) {
       <Header />
 
       <main
-        className="main-content">
+        className="main-content"
+      >
         <div className="container">
           {props.children}
         </div>
