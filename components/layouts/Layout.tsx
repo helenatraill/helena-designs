@@ -17,10 +17,7 @@ export default function Layout(props) {
 
         <meta name="theme-color" content="#ffffff" />
           
-        {/* <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-        <link rel="mask-icon" href="mask-icon.svg" color="#ffffff" />
-        <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-        <link rel="manifest" href="manifest.json" /> */}
+        <link rel="icon" sizes="any" type="image/png" href="favicon.png" />
 
         <title>{props.title} - {generalSettings.title}</title>
       </Head>
