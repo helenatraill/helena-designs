@@ -1,19 +1,17 @@
 import Link from 'next/link'
-import type { Post } from '@client'
 import styles from '@styles/modules/Archive.module.css'
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 import { CategoryNav } from '@components/includes'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
+import { client } from 'client'
 
-interface Props {
-  posts: Post[] | undefined
-}
+export default function Posts() {
 
-function Posts({
-  posts,
-
-}: Props): JSX.Element {
+  const { usePosts } = client
+  const posts = usePosts({
+    first: 150,
+  })?.nodes
 
   const { query = {} } = useRouter()
   const { categorySlug } = query
@@ -39,7 +37,7 @@ function Posts({
                       alt={post?.featuredImage?.node?.altText}
                       width={post?.featuredImage?.node?.mediaDetails?.width}
                       height={post?.featuredImage?.node?.mediaDetails?.height}
-                      objectFit="contain"
+                      objectFit="cover"
                     />
                   </a>
                 </Link>
@@ -51,5 +49,3 @@ function Posts({
     </div>
   )
 }
-
-export default Posts

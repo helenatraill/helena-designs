@@ -1,11 +1,7 @@
 .archive {
 
-  & > article {
-    background: pink;
-    border: 2px solid red;
-
-    & div > a > img {
-      margin: auto;
-    }
+  & img {
+    display: block;
+    width: 100%;
   }
 }

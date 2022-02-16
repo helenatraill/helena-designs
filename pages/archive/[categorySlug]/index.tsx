@@ -1,16 +1,12 @@
 import { getNextStaticProps, is404 } from '@faustjs/next'
 import { Posts, Pagination } from '@components/includes'
 import { GetStaticPropsContext } from 'next'
-import { useRouter } from 'next/router'
 import { client } from '@client'
 import Layout from '@components/layouts/Layout'
 
 export default function Page() {
-  const { usePosts, useCategory } = client
-  const { query = {} } = useRouter()
-  const { categorySlug } = query
+  const { useCategory } = client
   const category = useCategory()
-  const posts = usePosts()
 
   return (
     <Layout
@@ -20,12 +16,7 @@ export default function Page() {
         {category?.name}
       </h1>
       
-      <Posts posts={posts.nodes} />
-
-      <Pagination
-        pageInfo={posts.pageInfo}
-        basePath={`/archive/category/${categorySlug}`}
-      />
+      <Posts />
     </Layout>
   )
 }

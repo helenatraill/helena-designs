@@ -19,7 +19,7 @@ export default function Archive() {
         Archive
       </h1>
       
-      <Posts posts={posts.nodes} />
+      <Posts />
     </Layout>
   )
 }
