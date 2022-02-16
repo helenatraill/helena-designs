@@ -32,14 +32,16 @@ export default function Posts() {
               >
                 <Link href={`/archive/${categorySlug}/${post.slug}`}>
                   <a>
-                    <Image
-                      className={styles['archive__image']}
-                      src={post?.featuredImage?.node?.sourceUrl()}
-                      alt={post?.featuredImage?.node?.altText}
-                      width={post?.featuredImage?.node?.mediaDetails?.width}
-                      height={post?.featuredImage?.node?.mediaDetails?.height}
-                      //objectFit="cover"
-                    />
+                    <div className="image-wrapper">
+                      <Image
+                        className={styles['archive__image']}
+                        src={post?.featuredImage?.node?.sourceUrl()}
+                        alt={post?.featuredImage?.node?.altText}
+                        width={post?.featuredImage?.node?.mediaDetails?.width}
+                        height={post?.featuredImage?.node?.mediaDetails?.height}
+                        //objectFit="cover"
+                      />
+                    </div>
                   </a>
                 </Link>
               </article>
