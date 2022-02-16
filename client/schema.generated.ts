@@ -2842,6 +2842,9 @@ export interface UpdatePostInput {
 
 /** Input for the updateSettings mutation */
 export interface UpdateSettingsInput {
+  atlasContentModelerSettingsSettingsAtlasContentModelerUsageTracking?: InputMaybe<
+    Scalars["String"]
+  >;
   /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
   clientMutationId?: InputMaybe<Scalars["String"]>;
   /** Allow people to submit comments on new posts. */
@@ -3306,6 +3309,10 @@ export const scalarsEnumsHash: import("gqty").ScalarsEnumsHash = {
   UsersConnectionSearchColumnEnum: true,
 };
 export const generatedSchema = {
+  AtlasContentModelerSettingsSettings: {
+    __typename: { __type: "String!" },
+    atlasContentModelerUsageTracking: { __type: "String" },
+  },
   Avatar: {
     __typename: { __type: "String!" },
     default: { __type: "String" },
@@ -5961,6 +5968,9 @@ export const generatedSchema = {
   },
   Settings: {
     __typename: { __type: "String!" },
+    atlasContentModelerSettingsSettingsAtlasContentModelerUsageTracking: {
+      __type: "String",
+    },
     discussionSettingsDefaultCommentStatus: { __type: "String" },
     discussionSettingsDefaultPingStatus: { __type: "String" },
     generalSettingsDateFormat: { __type: "String" },
@@ -6330,6 +6340,9 @@ export const generatedSchema = {
     post: { __type: "Post" },
   },
   UpdateSettingsInput: {
+    atlasContentModelerSettingsSettingsAtlasContentModelerUsageTracking: {
+      __type: "String",
+    },
     clientMutationId: { __type: "String" },
     discussionSettingsDefaultCommentStatus: { __type: "String" },
     discussionSettingsDefaultPingStatus: { __type: "String" },
@@ -6350,6 +6363,9 @@ export const generatedSchema = {
   UpdateSettingsPayload: {
     __typename: { __type: "String!" },
     allSettings: { __type: "Settings" },
+    atlasContentModelerSettingsSettings: {
+      __type: "AtlasContentModelerSettingsSettings",
+    },
     clientMutationId: { __type: "String" },
     discussionSettings: { __type: "DiscussionSettings" },
     generalSettings: { __type: "GeneralSettings" },
@@ -6861,6 +6877,9 @@ export const generatedSchema = {
   query: {
     __typename: { __type: "String!" },
     allSettings: { __type: "Settings" },
+    atlasContentModelerSettingsSettings: {
+      __type: "AtlasContentModelerSettingsSettings",
+    },
     categories: {
       __type: "RootQueryToCategoryConnection",
       __args: {
@@ -7172,6 +7191,17 @@ export const generatedSchema = {
 } as const;
 
 /**
+ * The atlasContentModelerSettings setting type
+ */
+export interface AtlasContentModelerSettingsSettings {
+  __typename?: "AtlasContentModelerSettingsSettings";
+  /**
+   * The string Settings Group
+   */
+  atlasContentModelerUsageTracking?: Maybe<ScalarsEnums["String"]>;
+}
+
+/**
  * Avatars are profile images for users. WordPress by default uses the Gravatar service to host and fetch avatars from.
  */
 export interface Avatar {
@@ -7278,6 +7308,9 @@ export interface Category {
      */
     where?: Maybe<CategoryToCategoryConnectionWhereArgs>;
   }) => Maybe<CategoryToCategoryConnection>;
+  /**
+   * @deprecated Deprecated in favor of using Next.js pages
+   */
   conditionalTags?: Maybe<ConditionalTags>;
   /**
    * Connection between the category type and the ContentNode type
@@ -7852,90 +7885,112 @@ export interface ConditionalTags {
   __typename?: "ConditionalTags";
   /**
    * Determines whether the query is for an existing archive page.
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isArchive?: Maybe<ScalarsEnums["Boolean"]>;
   /**
    * Determines whether the query is for an existing attachment page.
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isAttachment?: Maybe<ScalarsEnums["Boolean"]>;
   /**
    * Determines whether the query is for an existing author archive page.
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isAuthor?: Maybe<ScalarsEnums["Boolean"]>;
   /**
    * Determines whether the query is for an existing category archive page.
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isCategory?: Maybe<ScalarsEnums["Boolean"]>;
   /**
    * Determines whether the query is for an existing date archive.
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isDate?: Maybe<ScalarsEnums["Boolean"]>;
   /**
    * Determines whether the query is for an existing day archive.
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isDay?: Maybe<ScalarsEnums["Boolean"]>;
   /**
    * Determines whether the query is for the front page of the site.
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isFrontPage?: Maybe<ScalarsEnums["Boolean"]>;
   /**
    * Determines whether the query is for the blog homepage.
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isHome?: Maybe<ScalarsEnums["Boolean"]>;
   /**
    * Determines whether the query is for an existing month archive.
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isMonth?: Maybe<ScalarsEnums["Boolean"]>;
   /**
    * Determines whether this site has more than one author.
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isMultiAuthor?: Maybe<ScalarsEnums["Boolean"]>;
   /**
    * Determines whether the query is for an existing single page.
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isPage?: Maybe<ScalarsEnums["Boolean"]>;
   /**
    * Determines whether currently in a page template.
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isPageTemplate?: Maybe<ScalarsEnums["Boolean"]>;
   /**
    * Determines whether the query is for an existing post type archive page.
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isPostTypeArchive?: Maybe<ScalarsEnums["Boolean"]>;
   /**
    * Determines whether the query is for a post or page preview.
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isPreview?: Maybe<ScalarsEnums["Boolean"]>;
   /**
    * Determines whether the query is for the Privacy Policy page.
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isPrivacyPolicy?: Maybe<ScalarsEnums["Boolean"]>;
   /**
    * Determines whether the query is for a search.
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isSearch?: Maybe<ScalarsEnums["Boolean"]>;
   /**
    * Determines whether the query is for an existing single post.
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isSingle?: Maybe<ScalarsEnums["Boolean"]>;
   /**
    * Determines whether the query is for an existing single post of any post type (post, attachment, page, custom post types).
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isSingular?: Maybe<ScalarsEnums["Boolean"]>;
   /**
    * Determines whether a post is sticky.
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isSticky?: Maybe<ScalarsEnums["Boolean"]>;
   /**
    * Determines whether the query is for an existing tag archive page.
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isTag?: Maybe<ScalarsEnums["Boolean"]>;
   /**
    * Determines whether the query is for an existing custom taxonomy archive page.
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isTax?: Maybe<ScalarsEnums["Boolean"]>;
   /**
    * Determines whether the query is for an existing year archive.
+   * @deprecated Deprecated in favor of using Next.js pages
    */
   isYear?: Maybe<ScalarsEnums["Boolean"]>;
 }
@@ -7945,6 +8000,9 @@ export interface ConditionalTags {
  */
 export interface ContentNode {
   __typename?: "MediaItem" | "Page" | "Post";
+  /**
+   * @deprecated Deprecated in favor of using Next.js pages
+   */
   conditionalTags?: Maybe<ConditionalTags>;
   /**
    * Connection between the ContentNode type and the ContentType type
@@ -8222,6 +8280,9 @@ export interface ContentType {
    * Whether this content type should can be exported.
    */
   canExport?: Maybe<ScalarsEnums["Boolean"]>;
+  /**
+   * @deprecated Deprecated in favor of using Next.js pages
+   */
   conditionalTags?: Maybe<ConditionalTags>;
   /**
    * Connection between the ContentType type and the Taxonomy type
@@ -9257,6 +9318,9 @@ export interface MediaItem {
      */
     where?: Maybe<MediaItemToCommentConnectionWhereArgs>;
   }) => Maybe<MediaItemToCommentConnection>;
+  /**
+   * @deprecated Deprecated in favor of using Next.js pages
+   */
   conditionalTags?: Maybe<ConditionalTags>;
   /**
    * Connection between the ContentNode type and the ContentType type
@@ -10019,6 +10083,9 @@ export interface NodeWithExcerpt {
  */
 export interface NodeWithFeaturedImage {
   __typename?: "Page" | "Post";
+  /**
+   * @deprecated Deprecated in favor of using Next.js pages
+   */
   conditionalTags?: Maybe<ConditionalTags>;
   /**
    * Connection between the ContentNode type and the ContentType type
@@ -10373,6 +10440,9 @@ export interface Page {
      */
     where?: Maybe<PageToCommentConnectionWhereArgs>;
   }) => Maybe<PageToCommentConnection>;
+  /**
+   * @deprecated Deprecated in favor of using Next.js pages
+   */
   conditionalTags?: Maybe<ConditionalTags>;
   /**
    * The content of the post.
@@ -10812,6 +10882,9 @@ export interface Post {
      */
     where?: Maybe<PostToCommentConnectionWhereArgs>;
   }) => Maybe<PostToCommentConnection>;
+  /**
+   * @deprecated Deprecated in favor of using Next.js pages
+   */
   conditionalTags?: Maybe<ConditionalTags>;
   /**
    * The content of the post.
@@ -11131,6 +11204,9 @@ export interface Post {
  */
 export interface PostFormat {
   __typename?: "PostFormat";
+  /**
+   * @deprecated Deprecated in favor of using Next.js pages
+   */
   conditionalTags?: Maybe<ConditionalTags>;
   /**
    * Connection between the postFormat type and the ContentNode type
@@ -12456,6 +12532,12 @@ export interface Settings {
   /**
    * Settings of the the string Settings Group
    */
+  atlasContentModelerSettingsSettingsAtlasContentModelerUsageTracking?: Maybe<
+    ScalarsEnums["String"]
+  >;
+  /**
+   * Settings of the the string Settings Group
+   */
   discussionSettingsDefaultCommentStatus?: Maybe<ScalarsEnums["String"]>;
   /**
    * Settings of the the string Settings Group
@@ -12520,6 +12602,9 @@ export interface Settings {
  */
 export interface Tag {
   __typename?: "Tag";
+  /**
+   * @deprecated Deprecated in favor of using Next.js pages
+   */
   conditionalTags?: Maybe<ConditionalTags>;
   /**
    * Connection between the tag type and the ContentNode type
@@ -12903,6 +12988,9 @@ export interface TaxonomyToContentTypeConnectionEdge {
  */
 export interface TermNode {
   __typename?: "Category" | "PostFormat" | "Tag";
+  /**
+   * @deprecated Deprecated in favor of using Next.js pages
+   */
   conditionalTags?: Maybe<ConditionalTags>;
   /**
    * The number of objects connected to the object
@@ -13138,6 +13226,9 @@ export interface UniformResourceIdentifiable {
     | "PostFormat"
     | "Tag"
     | "User";
+  /**
+   * @deprecated Deprecated in favor of using Next.js pages
+   */
   conditionalTags?: Maybe<ConditionalTags>;
   /**
    * The unique resource identifier path
@@ -13263,6 +13354,10 @@ export interface UpdateSettingsPayload {
    */
   allSettings?: Maybe<Settings>;
   /**
+   * Update the atlasContentModelerSettings setting.
+   */
+  atlasContentModelerSettingsSettings?: Maybe<AtlasContentModelerSettingsSettings>;
+  /**
    * If a &#039;clientMutationId&#039; input is provided to the mutation, it will be returned as output on the mutation. This ID can be used by the client to track the progress of mutations and catch possible duplicate mutation submissions.
    */
   clientMutationId?: Maybe<ScalarsEnums["String"]>;
@@ -13370,6 +13465,9 @@ export interface User {
      */
     where?: Maybe<UserToCommentConnectionWhereArgs>;
   }) => Maybe<UserToCommentConnection>;
+  /**
+   * @deprecated Deprecated in favor of using Next.js pages
+   */
   conditionalTags?: Maybe<ConditionalTags>;
   /**
    * Identifies the primary key from the database.
@@ -14035,6 +14133,7 @@ export interface Mutation {
 export interface Query {
   __typename?: "Query";
   allSettings?: Maybe<Settings>;
+  atlasContentModelerSettingsSettings?: Maybe<AtlasContentModelerSettingsSettings>;
   categories: (args?: {
     after?: Maybe<Scalars["String"]>;
     before?: Maybe<Scalars["String"]>;
@@ -14260,6 +14359,7 @@ export interface Subscription {
 }
 
 export interface SchemaObjectTypes {
+  AtlasContentModelerSettingsSettings: AtlasContentModelerSettingsSettings;
   Avatar: Avatar;
   Category: Category;
   CategoryToAncestorsCategoryConnection: CategoryToAncestorsCategoryConnection;
@@ -14458,6 +14558,7 @@ export interface SchemaObjectTypes {
   WritingSettings: WritingSettings;
 }
 export type SchemaObjectTypesNames =
+  | "AtlasContentModelerSettingsSettings"
   | "Avatar"
   | "Category"
   | "CategoryToAncestorsCategoryConnection"

@@ -17,18 +17,18 @@ const CategoryNav = () => {
             </Link>
           </li>
             
-          <li className={router && router.pathname && router.asPath.startsWith('/archive/website') ? 'active' : ''}>
-            <Link href="/archive/website">
+          <li className={router && router.pathname && router.asPath.startsWith('/archive/websites') ? 'active' : ''}>
+            <Link href="/archive/websites">
               <a>
-                Website
+                Websites
               </a>
             </Link>
           </li>
 
-          <li className={router && router.pathname && router.asPath.startsWith('/archive/animation') ? 'active' : ''}>
-            <Link href="/archive/animation">
+          <li className={router && router.pathname && router.asPath.startsWith('/archive/animations') ? 'active' : ''}>
+            <Link href="/archive/animations">
               <a>
-                Animation
+                Animations
               </a>
             </Link>
           </li>
