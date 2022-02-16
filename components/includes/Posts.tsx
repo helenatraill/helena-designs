@@ -37,9 +37,10 @@ export default function Posts() {
                         className={styles['archive__image']}
                         src={post?.featuredImage?.node?.sourceUrl()}
                         alt={post?.featuredImage?.node?.altText}
-                        width="100%"
-                        height={post?.featuredImage?.node?.mediaDetails?.height}
-                        objectFit="contain"
+                        //width="{post?.featuredImage?.node?.mediaDetails?.width}"
+                        //height={post?.featuredImage?.node?.mediaDetails?.height}
+                        //objectFit="cover"
+                        layout="fill"
                       />
                     </div>
                   </a>
