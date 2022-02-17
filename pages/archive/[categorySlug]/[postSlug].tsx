@@ -34,6 +34,8 @@ export default function Page() {
             <div dangerouslySetInnerHTML={{ __html: post?.content() ?? '' }} />
           </div>
         </article>
+
+        <MovePost />
       </Layout>
     </>
   )
