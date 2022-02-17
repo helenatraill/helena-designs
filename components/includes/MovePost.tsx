@@ -11,8 +11,7 @@ export default function MovePost() {
   const post = usePost()
   const { query = {} } = useRouter()
   const { categorySlug } = query
-  const { posts } = client.useQuery({})
-  const refetch = client.useRefetch()
+  const { posts } = client.useQuery()
   const currentPaginationCursor = btoa( `arrayconnection:${post.databaseId}` )
 
   const previous = posts({
@@ -58,10 +57,6 @@ export default function MovePost() {
           </a>
         </Link>
       }
-
-      <button onClick={() => {
-          refetch(posts);
-        }}>{next}</button>
     </nav>
   )
 }
