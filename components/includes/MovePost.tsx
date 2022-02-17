@@ -3,18 +3,16 @@ import { client } from '@client'
 import { useRouter } from 'next/router'
 import styles from '@styles/modules/MovePost.module.css'
 import btoa from 'btoa'
-import { Suspense } from 'react'
+import useSWR from 'swr'
+
 
 export default function MovePost() {
-
   const { usePost } = client
   const post = usePost()
   const { query = {} } = useRouter()
   const { categorySlug } = query
-  const { posts } = client.useQuery({
-    staleWhileRevalidate: true,
-  })
-
+  const { posts } = client.useQuery({})
+  const refetch = client.useRefetch()
   const currentPaginationCursor = btoa( `arrayconnection:${post.databaseId}` )
 
   const previous = posts({
@@ -60,6 +58,10 @@ export default function MovePost() {
           </a>
         </Link>
       }
+
+      <button onClick={() => {
+          refetch(posts);
+        }}>{next}</button>
     </nav>
   )
 }
