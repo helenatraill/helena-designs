@@ -12,7 +12,8 @@ export default function MovePost() {
   const { categorySlug } = query
   const { posts } = client.useQuery(
     {
-      suspense: true,
+      suspense: false,
+      staleWhileRevalidate: true,
       onError(error) {},
     }
   )
