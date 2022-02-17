@@ -6,12 +6,14 @@ import btoa from 'btoa'
 import { Suspense } from 'react'
 
 export default function MovePost() {
+
   const { usePost } = client
   const post = usePost()
   const { query = {} } = useRouter()
   const { categorySlug } = query
-  const refetch = client.useRefetch()
-  const { posts } = client.useQuery()
+  const { posts } = client.useQuery({
+    staleWhileRevalidate: true,
+  })
 
   const currentPaginationCursor = btoa( `arrayconnection:${post.databaseId}` )
 
@@ -31,7 +33,7 @@ export default function MovePost() {
     <nav className={styles.move}>
       { previous && 
         <Link href={`/archive/${categorySlug}/${previous}`}>
-          <a className={styles.previous} onClick={() => {refetch(posts)}}>
+          <a className={styles.previous}>
             <span>
               <svg width="25" xmlns="http://www.w3.org/2000/svg" height="25" fill="black" viewBox="0 0 6.3499999 6.3500002">
                 <g id="layer1" transform="translate(0 -290.65)">
@@ -46,7 +48,7 @@ export default function MovePost() {
 
       { next && 
         <Link href={`/archive/${categorySlug}/${next}`}>
-          <a className={styles.next} onClick={() => {refetch(posts)}}>
+          <a className={styles.next}>
             Next
             <span>
               <svg width="25" xmlns="http://www.w3.org/2000/svg" height="25" fill="black" viewBox="0 0 6.3499999 6.3500002">
