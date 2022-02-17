@@ -33,7 +33,7 @@ export default function Posts() {
                 <Link href={`/archive/${categorySlug}/${post.slug}`}>
                   <a>
                     <div className="image-wrapper">
-                      <Image
+                      <img
                         className={styles['archive__image']}
                         src={post?.featuredImage?.node?.sourceUrl()}
                         alt={post?.featuredImage?.node?.altText}
