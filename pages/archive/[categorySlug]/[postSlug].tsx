@@ -1,9 +1,9 @@
 import Layout from '@components/layouts/Layout'
-import { getNextServerSideProps, getNextStaticProps, is404 } from '@faustjs/next'
-import { GetServerSidePropsContext, GetStaticPropsContext } from 'next'
+import { getNextStaticProps, is404 } from '@faustjs/next'
+import { GetStaticPropsContext } from 'next'
 import { client } from '@client'
 import styles from '@styles/modules/Post.module.css'
-import { CategoryNav, MovePost, PostNav } from '@components/includes'
+import { PostNav } from '@components/includes'
 import Image from 'next/image'
 
 export default function Page() {
@@ -18,7 +18,7 @@ export default function Page() {
         <article className={styles.post}>
           <div className={styles.image}>
             <div className="image-wrapper">
-              <img
+              <Image
                 src={post?.featuredImage?.node?.sourceUrl()}
                 alt={post?.featuredImage?.node?.altText}
                 width={post?.featuredImage?.node?.mediaDetails?.width}
@@ -38,14 +38,6 @@ export default function Page() {
     </>
   )
 }
-
-//export async function getServerSideProps(context: GetServerSidePropsContext) {
-  //return getNextServerSideProps(context, {
-    //Page,
-    //client,
-    //notFound: await is404(context, { client }),
-  //})
-//}
 
 export async function getStaticProps(context: GetStaticPropsContext) {
   return getNextStaticProps(context, {
