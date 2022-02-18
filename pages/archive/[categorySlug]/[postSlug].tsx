@@ -3,7 +3,7 @@ import { getNextServerSideProps, getNextStaticProps, is404 } from '@faustjs/next
 import { GetServerSidePropsContext, GetStaticPropsContext } from 'next'
 import { client } from '@client'
 import styles from '@styles/modules/Post.module.css'
-import { CategoryNav, MovePost } from '@components/includes'
+import { CategoryNav, MovePost, PostNav } from '@components/includes'
 import Image from 'next/image'
 
 export default function Page() {
@@ -15,12 +15,10 @@ export default function Page() {
       <Layout
         title={post?.title()}
       >        
-        <CategoryNav />
-
         <article className={styles.post}>
           <div className={styles.image}>
             <div className="image-wrapper">
-              <Image
+              <img
                 src={post?.featuredImage?.node?.sourceUrl()}
                 alt={post?.featuredImage?.node?.altText}
                 width={post?.featuredImage?.node?.mediaDetails?.width}
@@ -35,7 +33,7 @@ export default function Page() {
           </div>
         </article>
 
-        <MovePost />
+        <PostNav />
       </Layout>
     </>
   )

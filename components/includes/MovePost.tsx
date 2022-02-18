@@ -3,15 +3,13 @@ import { client } from '@client'
 import { useRouter } from 'next/router'
 import styles from '@styles/modules/MovePost.module.css'
 import btoa from 'btoa'
-import useSWR from 'swr'
-
 
 export default function MovePost() {
-  const { usePost } = client
+  const { usePost, useQuery } = client
   const post = usePost()
   const { query = {} } = useRouter()
   const { categorySlug } = query
-  const { posts } = client.useQuery()
+  const { posts } = useQuery()
   const currentPaginationCursor = btoa( `arrayconnection:${post.databaseId}` )
 
   const previous = posts({

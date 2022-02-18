@@ -1,0 +1,18 @@
+.post-nav {
+  display: flex;
+  gap: var(--space-small);
+  justify-content: space-between;
+  margin: var(--space-small) auto 0 auto;
+  //max-width: 40rem;
+  padding: 0 0.7em var(--space-xxx-small) 0;
+  overflow-x: auto;
+
+  & > li {
+    flex-shrink: 0;
+  
+    & > a {
+      font-weight: bold;
+      text-decoration: none;
+    }
+  }
+}

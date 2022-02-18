@@ -1,9 +1,9 @@
 .category-nav {
   display: flex;
-  gap: var(--space-x-small);
+  gap: var(--space-small);
   justify-content: space-between;
   margin: 0 auto var(--space-x-small) auto;
-  max-width: 40rem;
+  max-width: 50rem;
   padding: 0 0.7em;
   overflow-x: auto;
 
