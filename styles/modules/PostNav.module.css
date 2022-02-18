@@ -4,7 +4,7 @@
   justify-content: space-between;
   margin: var(--space-small) auto 0 auto;
   //max-width: 40rem;
-  padding: 0 0.7em var(--space-xxx-small) 0;
+  padding: 0 0.7em var(--space-xxx-small) 0.7em;
   overflow-x: auto;
 
   & > li {
