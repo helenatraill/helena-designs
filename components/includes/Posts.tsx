@@ -39,6 +39,8 @@ export default function Posts() {
                         alt={post?.featuredImage?.node?.altText}
                         width={post?.featuredImage?.node?.mediaDetails?.width}
                         height={post?.featuredImage?.node?.mediaDetails?.height}
+                        placeholder="blur"
+                        blurDataURL={post?.featuredImage?.node?.sourceUrl()}
                         //objectFit="cover"
                       />
                     </div>

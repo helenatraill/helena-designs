@@ -4,7 +4,7 @@ import { GetStaticPropsContext } from 'next'
 import { client, PageIdType } from 'client'
 import styles from '@styles/modules/Home.module.css'
 import { Animate } from 'react-simple-animate'
-import { PostNav } from '@components/includes'
+import { ImageWrapper, PostNav } from '@components/includes'
 
 export default function Home() {
   const { usePage } = client

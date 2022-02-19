@@ -1,0 +1,15 @@
+.image-wrapper {
+
+  & > span {
+    display: block !important;
+  }
+}
+
+.image-animation {
+
+}
+
+.image-blur {
+  filter: blur(40px);
+  transform: scale(1.1);
+}
