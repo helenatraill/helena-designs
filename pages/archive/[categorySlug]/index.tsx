@@ -32,12 +32,12 @@ export async function getStaticProps(context: GetStaticPropsContext) {
 export function getStaticPaths() {
   return {
     paths: [
-      { params: { slug: 'all' } },
-      { params: { slug: 'websites' } },
-      { params: { slug: 'animations' } },
-      { params: { slug: 'graphics' } },
-      { params: { slug: 'photography' } },
-      { params: { slug: 'painting' } }
+      { params: { categorySlug: 'all' } },
+      { params: { categorySlug: 'websites' } },
+      { params: { categorySlug: 'animations' } },
+      { params: { categorySlug: 'graphics' } },
+      { params: { categorySlug: 'photography' } },
+      { params: { categorySlug: 'painting' } }
 
     ],
     fallback: 'blocking',
