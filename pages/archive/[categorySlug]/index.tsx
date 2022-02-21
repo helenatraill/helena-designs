@@ -4,7 +4,7 @@ import { GetStaticPropsContext } from 'next'
 import { client } from '@client'
 import Layout from '@components/layouts/Layout'
 
-export default function CategoryPage() {
+export default function Category() {
   const { useCategory } = client
   const category = useCategory()
 
@@ -23,8 +23,15 @@ export default function CategoryPage() {
 
 export async function getStaticProps(context: GetStaticPropsContext) {
   return getNextStaticProps(context, {
-    Page: CategoryPage,
+    Page: Category,
     client,
     notFound: await is404(context, { client }),
   })
+}
+
+export function getStaticPaths() {
+  return {
+    paths: [],
+    fallback: 'blocking',
+  }
 }

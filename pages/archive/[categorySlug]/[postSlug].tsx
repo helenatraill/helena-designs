@@ -6,7 +6,7 @@ import styles from '@styles/modules/Post.module.css'
 import { PostNav } from '@components/includes'
 import Image from 'next/image'
 
-export default function PostPage() {
+export default function Post() {
   const { usePost } = client
   const post = usePost()
 
@@ -43,7 +43,7 @@ export default function PostPage() {
 
 export async function getStaticProps(context: GetStaticPropsContext) {
   return getNextStaticProps(context, {
-    Page: PostPage,
+    Page: Post,
     client,
     notFound: await is404(context, { client }),
   })
@@ -56,7 +56,8 @@ export async function getStaticPaths() {
         first: 150,
       })
       ?.nodes?.map((node) => node?.uri)
-  });
+  })
+
   const paths = []
 
   if (Array.isArray(values)) {
