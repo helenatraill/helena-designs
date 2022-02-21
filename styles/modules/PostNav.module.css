@@ -1,5 +1,5 @@
 .post-nav {
-  background-color: var(--design-green);
+  background-color: #000;
   bottom: 0;
   color: #fff;
   display: flex;
@@ -8,12 +8,12 @@
   //margin: var(--space-small) auto 0 auto;
   //max-width: 40rem;
   //padding: 0 0.7em var(--space-xxx-small) 0.7em;
-  padding: var(--space-xxx-small) 0.7em;
+  padding: var(--space-xxx-small) var(--space-x-small);
   position: fixed;
   overflow-x: auto;
   scrollbar-height: thin;
   scrollbar-width: thin;
-  scrollbar-color: #000 #fff;
+  scrollbar-color: #fff #000;
   z-index: 1;
 
   &::-webkit-scrollbar {
@@ -22,13 +22,13 @@
   }
 
   &::-webkit-scrollbar-track {
-    background: var(--design-green);
+    background: #000;
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: #fff;
+    background-color: rgba(50 50 50 / 1);
     border-radius: 20px;
-    border: 3px solid var(--design-green);
+    border: 3px solid #000;
   }
 
   & > li {
@@ -48,5 +48,6 @@
 
   @media (min-width: 768px) {
     gap: var(--space-small);
+    padding: var(--space-xxx-small) var(--space-small);
   }
 }

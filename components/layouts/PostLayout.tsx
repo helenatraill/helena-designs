@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import { client } from '@client'
-import { Header, Footer } from '@components/includes'
+import { Header, Footer, PostNav } from '@components/includes'
 
-export default function Layout(props) {
+export default function PostLayout(props) {
   const { useQuery } = client
   const generalSettings = useQuery().generalSettings
 
@@ -25,14 +25,14 @@ export default function Layout(props) {
       <Header />
 
       <main
-        className="main-content"
+        className="post-content"
       >
         <div className="container">
           {props.children}
         </div>
       </main>
 
-      <Footer />
+      <PostNav />
     </>
   )
 }

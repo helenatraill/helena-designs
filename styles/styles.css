@@ -88,6 +88,29 @@ body {
   }
 }
 
+.post-content {
+  display: grid;
+  flex: 1;
+  place-content: center;
+  padding: var(--space-x-small) 0 calc(var(--space-x-small) + calc(var(--space-x-small) * 2) + 1ch + 57.94px) 0;
+}
+
+.main-content, .post-content {
+
+  @nest :where(&) {
+
+    & a {
+      text-decoration: underline;
+      text-underline-offset: 0.1em;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+
 .main-footer {
   flex: 0;
   padding: var(--space-x-small) 0 var(--space-xx-small) 0;

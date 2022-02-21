@@ -1,4 +1,4 @@
-import Layout from '@components/layouts/Layout'
+import PostLayout from '@components/layouts/PostLayout'
 import { getNextStaticProps, is404 } from '@faustjs/next'
 import { GetStaticPropsContext } from 'next'
 import { client } from '@client'
@@ -12,19 +12,19 @@ export default function Post() {
 
   return (
     <>
-      <Layout
+      <PostLayout
         title={post?.title()}
       >        
         <article className={styles.post}>
           <div className={styles.image}>
             <div className="image-wrapper">
-              <img
+              <Image
                 src={post?.featuredImage?.node?.sourceUrl()}
                 alt={post?.featuredImage?.node?.altText}
                 width={post?.featuredImage?.node?.mediaDetails?.width}
                 height={post?.featuredImage?.node?.mediaDetails?.height}
-                //placeholder="blur"
-                //blurDataURL={post?.featuredImage?.node?.sourceUrl()}
+                placeholder="blur"
+                blurDataURL={post?.featuredImage?.node?.sourceUrl()}
                 //objectFit="cover"
               />
             </div>
@@ -34,7 +34,7 @@ export default function Post() {
             <div dangerouslySetInnerHTML={{ __html: post?.content() ?? '' }} />
           </div>
         </article>
-      </Layout>
+      </PostLayout>
     </>
   )
 }

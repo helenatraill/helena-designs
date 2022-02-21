@@ -36,7 +36,7 @@ const PostNav = () => {
         }
 
         .active::before {
-          color: #5A8216;
+          color: #fff;
           content: '•';
           left: -0.7em;
           position: absolute;
