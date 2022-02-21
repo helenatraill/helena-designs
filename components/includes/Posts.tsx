@@ -30,7 +30,7 @@ export default function Posts() {
               <article
                 key={post.id ?? ''}
               >
-                <Link href={`/archive/project/${post.slug}`}>
+                <Link href={`/projects/${post.slug}`}>
                   <a>
                     <div className="image-wrapper">
                       <Image

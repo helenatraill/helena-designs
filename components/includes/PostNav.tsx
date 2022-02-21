@@ -19,8 +19,8 @@ const PostNav = () => {
       <nav aria-label="Select Project">
         <ul className={styles['post-nav']}>
           {posts.map((post) => (
-            <li className={router && router.pathname && router.asPath.startsWith(`/archive/${categorySlug}/${post.slug}`) ? 'active' : ''}>
-              <Link href={`/archive/${categorySlug}/${post.slug}`}>
+            <li className={router && router.pathname && router.asPath.startsWith(`/projects/${post.slug}`) ? 'active' : ''}>
+              <Link href={`/projects/${post.slug}`}>
                 <a>
                   {post?.title()}
                 </a>
