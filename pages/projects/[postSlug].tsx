@@ -3,7 +3,7 @@ import { getNextStaticProps, is404 } from '@faustjs/next'
 import { GetStaticPropsContext } from 'next'
 import { client } from '@client'
 import styles from '@styles/modules/Post.module.css'
-import { PostNav } from '@components/includes'
+import { PostNav, MovePost } from '@components/includes'
 import Image from 'next/image'
 
 export default function Post() {
@@ -36,6 +36,7 @@ export default function Post() {
         </article>
 
         <PostNav />
+        <MovePost />
       </Layout>
     </>
   )
