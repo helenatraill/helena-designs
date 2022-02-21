@@ -3,7 +3,7 @@
   bottom: 0;
   color: #fff;
   display: flex;
-  gap: var(--space-x-small);
+  gap: var(--space-small);
   justify-content: space-between;
   //margin: var(--space-small) auto 0 auto;
   //max-width: 40rem;
@@ -47,7 +47,6 @@
   }
 
   @media (min-width: 768px) {
-    gap: var(--space-small);
     padding: var(--space-xxx-small) var(--space-small);
   }
 }
