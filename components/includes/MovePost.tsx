@@ -26,8 +26,9 @@ export default function MovePost() {
 
   return (
     <nav className={styles.move}>
+      MovePost
       { previous && 
-        <Link href={`/archive/${categorySlug}/${previous}`}>
+        <Link href={`/projects/${previous}`}>
           <a className={styles.previous}>
             <span>
               <svg width="25" xmlns="http://www.w3.org/2000/svg" height="25" fill="black" viewBox="0 0 6.3499999 6.3500002">
@@ -42,7 +43,7 @@ export default function MovePost() {
       }
 
       { next && 
-        <Link href={`/archive/${categorySlug}/${next}`}>
+        <Link href={`/projects/${next}`}>
           <a className={styles.next}>
             Next
             <span>
