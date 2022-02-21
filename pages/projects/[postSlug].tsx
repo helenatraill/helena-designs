@@ -49,9 +49,28 @@ export async function getStaticProps(context: GetStaticPropsContext) {
   })
 }
 
-export function getStaticPaths() {
+export async function getStaticPaths() {
+  const values = await client.client.inlineResolved(() => {
+    return client.client.query
+      .posts({
+        first: 150,
+      })
+      ?.nodes?.map((node) => node?.uri)
+  })
+
+  const paths = []
+
+  if (Array.isArray(values)) {
+    paths.push(
+      ...values
+        .filter((value) => {
+          return typeof value === 'string'
+        }),
+    )
+  }
+
   return {
-    paths: [],
+    paths,
     fallback: 'blocking',
   }
 }
