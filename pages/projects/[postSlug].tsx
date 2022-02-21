@@ -16,7 +16,6 @@ export default function Post() {
         title={post?.title()}
       >        
         <article className={styles.post}>
-          <MovePost />
           <div className={styles.image}>
             <div className="image-wrapper">
               <Image

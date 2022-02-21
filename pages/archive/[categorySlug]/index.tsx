@@ -31,7 +31,16 @@ export async function getStaticProps(context: GetStaticPropsContext) {
 
 export function getStaticPaths() {
   return {
-    paths: [],
+    paths: [
+      { params: { slug: 'all' } },
+      { params: { slug: 'websites' } },
+      { params: { slug: 'animations' } },
+      { params: { slug: 'graphics' } },
+      { params: { slug: 'photography' } },
+      { params: { slug: 'painting' } }
+
+    ],
     fallback: 'blocking',
   }
 }
+
