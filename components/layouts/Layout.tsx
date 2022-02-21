@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { client } from '@client'
-import { Header, Footer } from '@components/includes'
+import { Header, Footer, PostNav } from '@components/includes'
 
 export default function Layout(props) {
   const { useQuery } = client
@@ -33,6 +33,8 @@ export default function Layout(props) {
       </main>
 
       <Footer />
+
+      <PostNav />
     </>
   )
 }
