@@ -32,7 +32,6 @@ const PostNav = () => {
 
       <style jsx>{`
         .active {
-          font-weight: bold;
           position: relative;
         }
 
