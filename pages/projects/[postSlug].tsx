@@ -3,8 +3,9 @@ import { getNextStaticProps, is404 } from '@faustjs/next'
 import { GetStaticPropsContext } from 'next'
 import { client } from '@client'
 import styles from '@styles/modules/Post.module.css'
-import { PostNav, MovePost } from '@components/includes'
+import { CategoryNav } from '@components/includes'
 import Image from 'next/image'
+import Category from 'pages/archive/[categorySlug]'
 
 export default function Post() {
   const { usePost } = client
@@ -15,16 +16,16 @@ export default function Post() {
       <PostLayout
         title={post?.title()}
       >        
-        <article className={styles.post}>
+        <article className={styles.post}>          
           <div className={styles.image}>
             <div className="image-wrapper">
-              <Image
+              <img
                 src={post?.featuredImage?.node?.sourceUrl()}
                 alt={post?.featuredImage?.node?.altText}
                 width={post?.featuredImage?.node?.mediaDetails?.width}
                 height={post?.featuredImage?.node?.mediaDetails?.height}
-                placeholder="blur"
-                blurDataURL={post?.featuredImage?.node?.sourceUrl()}
+                //placeholder="blur"
+                //blurDataURL={post?.featuredImage?.node?.sourceUrl()}
                 //objectFit="cover"
               />
             </div>

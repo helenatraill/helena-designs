@@ -32,11 +32,12 @@ const PostNav = () => {
 
       <style jsx>{`
         .active {
+          font-weight: bold;
           position: relative;
         }
 
         .active::before {
-          color: #fff;
+          color: #5A8216;
           content: '•';
           left: -0.7em;
           position: absolute;
