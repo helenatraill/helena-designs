@@ -1,7 +1,7 @@
 .post-nav {
   background-color: #000;
   bottom: 0;
-  padding: var(--space-xxx-small) 0;
+  padding: var(--space-xxx-small) var(--space-xx-small);
   position: fixed;
   width: 100%;
   z-index: 1;
@@ -9,10 +9,10 @@
   & .post-nav__content {
     color: #fff;
     display: flex;
-    gap: var(--space-small);
+    gap: var(--space-x-small);
     justify-content: space-between;
     margin: 0 auto;
-    max-width: 99vw;
+    max-width: calc(1040px + (var(--space-x-small) * 2));
     padding: 0 0.7em;
     overflow-x: auto;
     scrollbar-height: thin;
@@ -25,7 +25,7 @@
     }
   
     &::-webkit-scrollbar-track {
-      background: #000;
+      background-color: #000;
     }
   
     &::-webkit-scrollbar-thumb {
@@ -47,10 +47,9 @@
         }
       }
     }
-  }
 
-  @media (min-width: 768px) {
-    max-width: calc(1040px + (var(--space-x-small) * 2));
-    padding: var(--space-xxx-small) var(--space-small);
+    @media (min-width: 768px) {
+      gap: var(--space-small);
+    }
   }
 }

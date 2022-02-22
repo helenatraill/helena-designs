@@ -1,6 +1,6 @@
 .category-nav {
   display: flex;
-  gap: var(--space-small);
+  gap: var(--space-x-small);
   justify-content: space-between;
   margin: 0 auto var(--space-x-small) auto;
   max-width: 50rem;
@@ -10,5 +10,9 @@
   & > li > a {
     font-weight: bold;
     text-decoration: none;
+  }
+
+  @media (min-width: 768px) {
+    gap: var(--space-small);
   }
 }

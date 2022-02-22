@@ -44,7 +44,7 @@ body {
   }
 
   &::-webkit-scrollbar-track {
-    background: #fff;
+    background-color: #fff;
   }
 
   &::-webkit-scrollbar-thumb {
@@ -64,7 +64,7 @@ body {
   height: 100%;
   margin: auto;
   max-width: calc(1040px + (var(--space-x-small) * 2));
-  padding: 0 var(--space-xx-small) 0 var(--space-xx-small);
+  padding: 0 var(--space-xx-small);
   position: relative;
 }
 
