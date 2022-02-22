@@ -17,17 +17,19 @@ const PostNav = () => {
   return (
     <>
       <nav className={styles['post-nav']} aria-label="Select Project">
-        <ul className={styles['post-nav__content']}>
-          {posts.map((post) => (
-            <li className={router && router.pathname && router.asPath === (`/projects/${post.slug}`) ? 'active' : ''}>
-              <Link href={`/projects/${post.slug}`}>
-                <a>
-                  {post?.title()}
-                </a>
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <div className="container">
+          <ul className={styles['post-nav__content']}>
+            {posts.map((post) => (
+              <li className={router && router.pathname && router.asPath === (`/projects/${post.slug}`) ? 'active' : ''}>
+                <Link href={`/projects/${post.slug}`}>
+                  <a>
+                    {post?.title()}
+                  </a>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </nav>
 
       <style jsx>{`
