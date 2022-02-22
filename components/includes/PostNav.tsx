@@ -16,8 +16,8 @@ const PostNav = () => {
 
   return (
     <>
-      <nav aria-label="Select Project">
-        <ul className={styles['post-nav']}>
+      <nav className={styles['post-nav']} aria-label="Select Project">
+        <ul className={styles['post-nav__content']}>
           {posts.map((post) => (
             <li className={router && router.pathname && router.asPath === (`/projects/${post.slug}`) ? 'active' : ''}>
               <Link href={`/projects/${post.slug}`}>
@@ -37,7 +37,7 @@ const PostNav = () => {
         }
 
         .active::before {
-          color: #5A8216;
+          color: #fff;
           content: '•';
           left: -0.7em;
           position: absolute;
