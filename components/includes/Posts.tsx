@@ -33,14 +33,14 @@ export default function Posts() {
                 <Link href={`/projects/${post.slug}`}>
                   <a>
                     <div className="image-wrapper">
-                      <img
+                      <Image
                         className={styles['archive__image']}
                         src={post?.featuredImage?.node?.sourceUrl()}
                         alt={post?.featuredImage?.node?.altText}
                         width={post?.featuredImage?.node?.mediaDetails?.width}
                         height={post?.featuredImage?.node?.mediaDetails?.height}
-                        //placeholder="blur"
-                        //blurDataURL={post?.featuredImage?.node?.sourceUrl()}
+                        placeholder="blur"
+                        blurDataURL={post?.featuredImage?.node?.sourceUrl()}
                         //objectFit="cover"
                       />
                     </div>

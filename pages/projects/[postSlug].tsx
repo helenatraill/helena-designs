@@ -19,13 +19,13 @@ export default function Post() {
         <article className={styles.post}>          
           <div className={styles.image}>
             <div className="image-wrapper">
-              <img
+              <Image
                 src={post?.featuredImage?.node?.sourceUrl()}
                 alt={post?.featuredImage?.node?.altText}
                 width={post?.featuredImage?.node?.mediaDetails?.width}
                 height={post?.featuredImage?.node?.mediaDetails?.height}
-                //placeholder="blur"
-                //blurDataURL={post?.featuredImage?.node?.sourceUrl()}
+                placeholder="blur"
+                blurDataURL={post?.featuredImage?.node?.sourceUrl()}
                 //objectFit="cover"
               />
             </div>
