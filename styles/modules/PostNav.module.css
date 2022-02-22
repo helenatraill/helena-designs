@@ -4,12 +4,10 @@
   display: flex;
   gap: var(--space-small);
   justify-content: space-between;
-  left: 50%;
   max-width: calc(1040px + (var(--space-x-small) * 2));
   padding: var(--space-xxx-small) var(--space-x-small);
   position: fixed;
   overflow-x: auto;
-  transform: translateX(-50%);
   z-index: 1;
 
   & > li {
