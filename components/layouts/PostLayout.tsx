@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { client } from '@client'
 import { Header, Footer, PostNav } from '@components/includes'
 
-export default function PostLayout(props) {
+export default function PostLayout({ title, children }: { title: string; children: React.ReactNode }) {
   const { useQuery } = client
   const generalSettings = useQuery().generalSettings
 
@@ -16,20 +16,18 @@ export default function PostLayout(props) {
         <meta name="description" content={generalSettings.description} />
 
         <meta name="theme-color" content="#ffffff" />
-          
+
         <link rel="icon" sizes="any" type="image/png" href="favicon.png" />
 
-        <title>{props.title} - {generalSettings.title}</title>
+        <title>
+          {title} - {generalSettings.title}
+        </title>
       </Head>
 
       <Header />
 
-      <main
-        className="post-content"
-      >
-        <div className="container">
-          {props.children}
-        </div>
+      <main className="post-content">
+        <div className="container">{children}</div>
       </main>
 
       <PostNav />

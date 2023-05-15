@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { client } from '@client'
 import { Header, Footer } from '@components/includes'
 
-export default function Layout(props) {
+export default function Layout({ title, children }: { title: string; children: React.ReactNode }) {
   const { useQuery } = client
   const generalSettings = useQuery().generalSettings
 
@@ -16,20 +16,18 @@ export default function Layout(props) {
         <meta name="description" content={generalSettings.description} />
 
         <meta name="theme-color" content="#ffffff" />
-          
+
         <link rel="icon" sizes="any" type="image/png" href="favicon.png" />
 
-        <title>{props.title} - {generalSettings.title}</title>
+        <title>
+          {title} - {generalSettings.title}
+        </title>
       </Head>
 
       <Header />
 
-      <main
-        className="main-content"
-      >
-        <div className="container">
-          {props.children}
-        </div>
+      <main className="main-content">
+        <div className="container">{children}</div>
       </main>
 
       <Footer />

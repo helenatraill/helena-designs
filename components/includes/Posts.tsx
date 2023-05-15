@@ -7,7 +7,6 @@ import { useRouter } from 'next/router'
 import { client } from 'client'
 
 export default function Posts() {
-
   const { usePosts } = client
   const posts = usePosts({
     first: 150,
@@ -20,35 +19,27 @@ export default function Posts() {
     <div className={styles.archive}>
       <CategoryNav />
 
-      <ResponsiveMasonry
-        columnsCountBreakPoints={{350: 1, 768: 2, 1024: 3}}
-      >
-        <Masonry
-          gutter={16}
-        >
-            {posts.map((post) => (
-              <article
-                key={post.id ?? ''}
-              >
-                <Link href={`/projects/${post.slug}`}>
-                  <a>
-                    <div className="image-wrapper">
-                      <Image
-                        className={styles['archive__image']}
-                        src={post?.featuredImage?.node?.sourceUrl()}
-                        alt={post?.featuredImage?.node?.altText}
-                        width={post?.featuredImage?.node?.mediaDetails?.width}
-                        height={post?.featuredImage?.node?.mediaDetails?.height}
-                        placeholder="blur"
-                        blurDataURL={post?.featuredImage?.node?.sourceUrl()}
-                        //objectFit="cover"
-                      />
-                    </div>
-                  </a>
-                </Link>
-              </article>
-            ))}
-            {posts && posts?.length < 1 && <p>No {categorySlug} projects found :(</p>}
+      <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 768: 2, 1024: 3 }}>
+        <Masonry gutter={16}>
+          {posts.map(post => (
+            <article key={post.id ?? ''}>
+              <Link href={`/projects/${post.slug}`}>
+                <div className="image-wrapper">
+                  <Image
+                    className={styles['archive__image']}
+                    src={post?.featuredImage?.node?.sourceUrl()}
+                    alt={post?.featuredImage?.node?.altText}
+                    width={post?.featuredImage?.node?.mediaDetails?.width}
+                    height={post?.featuredImage?.node?.mediaDetails?.height}
+                    //placeholder="blur"
+                    //blurDataURL={post?.featuredImage?.node?.sourceUrl()}
+                    //objectFit="cover"
+                  />
+                </div>
+              </Link>
+            </article>
+          ))}
+          {posts && posts?.length < 1 && <p>No {categorySlug} projects found :(</p>}
         </Masonry>
       </ResponsiveMasonry>
     </div>

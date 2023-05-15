@@ -8,13 +8,11 @@ export interface PageProps {
 }
 
 export function PageComponent({ page }: PageProps) {
-  const { useQuery } = client;
+  const { useQuery } = client
   const generalSettings = useQuery().generalSettings
 
   return (
-    <Layout
-      title={page?.title()}
-    >
+    <Layout title={page?.title()}>
       <article>
         <div dangerouslySetInnerHTML={{ __html: page?.content() ?? '' }} />
       </article>

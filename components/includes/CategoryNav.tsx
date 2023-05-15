@@ -10,51 +10,27 @@ const CategoryNav = () => {
       <nav aria-label="Select Category">
         <ul className={styles['category-nav']}>
           <li className={router && router.pathname && router.asPath.startsWith('/archive/all') ? 'active' : ''}>
-            <Link href="/archive/all">
-              <a>
-                All
-              </a>
-            </Link>
+            <Link href="/archive/all">All</Link>
           </li>
-            
+
           <li className={router && router.pathname && router.asPath.startsWith('/archive/websites') ? 'active' : ''}>
-            <Link href="/archive/websites">
-              <a>
-                Websites
-              </a>
-            </Link>
+            <Link href="/archive/websites">Websites</Link>
           </li>
 
           <li className={router && router.pathname && router.asPath.startsWith('/archive/animations') ? 'active' : ''}>
-            <Link href="/archive/animations">
-              <a>
-                Animations
-              </a>
-            </Link>
+            <Link href="/archive/animations">Animations</Link>
           </li>
 
           <li className={router && router.pathname && router.asPath.startsWith('/archive/graphics') ? 'active' : ''}>
-            <Link href="/archive/graphics">
-              <a>
-                Graphics
-              </a>
-            </Link>
+            <Link href="/archive/graphics">Graphics</Link>
           </li>
 
           <li className={router && router.pathname && router.asPath.startsWith('/archive/photography') ? 'active' : ''}>
-            <Link href="/archive/photography">
-              <a>
-                Photography
-              </a>
-            </Link>
+            <Link href="/archive/photography">Photography</Link>
           </li>
 
           <li className={router && router.pathname && router.asPath.startsWith('/archive/painting') ? 'active' : ''}>
-            <Link href="/archive/painting">
-              <a>
-                Painting
-              </a>
-            </Link>
+            <Link href="/archive/painting">Painting</Link>
           </li>
         </ul>
       </nav>
@@ -65,7 +41,7 @@ const CategoryNav = () => {
         }
 
         .active::before {
-          color: #5A8216;
+          color: #5a8216;
           content: '•';
           left: -0.7em;
           position: absolute;

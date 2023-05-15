@@ -4,7 +4,6 @@ import { GetStaticPropsContext } from 'next'
 import { client, PageIdType } from 'client'
 import styles from '@styles/modules/Home.module.css'
 import { Animate } from 'react-simple-animate'
-import { ImageWrapper, PostNav } from '@components/includes'
 
 export default function Home() {
   const { usePage } = client
@@ -14,9 +13,7 @@ export default function Home() {
   })
 
   return (
-    <Layout
-      title={page?.title()}
-    >
+    <Layout title={page?.title()}>
       <div className={styles['home']}>
         <article className={styles.hi}>
           <Animate play delay={0.25} duration={3} start={{ opacity: 0 }} end={{ opacity: 1 }}>
@@ -33,4 +30,4 @@ export async function getStaticProps(context: GetStaticPropsContext) {
     Page: Home,
     client,
   })
-} 
+}

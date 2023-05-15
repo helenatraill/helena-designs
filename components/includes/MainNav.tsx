@@ -12,11 +12,9 @@ const MainNav = () => {
     <>
       <nav>
         <ul className={styles['main-nav']}>
-          {links?.map((link) => (
+          {links?.map(link => (
             <li key={`${link.label}$-menu`}>
-              <Link href={link.url ?? ''}>
-                <a>{link.label}</a>
-              </Link>
+              <Link href={link.url ?? ''}>{link.label}</Link>
             </li>
           ))}
         </ul>

@@ -13,10 +13,8 @@ export default function Post() {
 
   return (
     <>
-      <PostLayout
-        title={post?.title()}
-      >        
-        <article className={styles.post}>          
+      <PostLayout title={post?.title()}>
+        <article className={styles.post}>
           <div className={styles.image}>
             <div className="image-wrapper">
               <Image
@@ -54,17 +52,16 @@ export async function getStaticPaths() {
       .posts({
         first: 150,
       })
-      ?.nodes?.map((node) => node?.uri)
+      ?.nodes?.map(node => node?.uri)
   })
 
   const paths = []
 
   if (Array.isArray(values)) {
     paths.push(
-      ...values
-        .filter((value) => {
-          return typeof value === 'string'
-        }),
+      ...values.filter(value => {
+        return typeof value === 'string'
+      })
     )
   }
 
