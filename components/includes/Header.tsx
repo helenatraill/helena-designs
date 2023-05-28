@@ -1,14 +1,8 @@
 import Link from 'next/link'
-import { client, MenuLocationEnum } from '@client'
 import { MainNav } from '.'
 import styles from '@styles/modules/Header.module.css'
 
-const Header = () => {
-  const { menuItems } = client.useQuery()
-  const links = menuItems({
-    where: { location: MenuLocationEnum.PRIMARY },
-  }).nodes
-
+export default function Header() {
   return (
     <header className="main-header">
       <div className="container">
@@ -34,5 +28,3 @@ const Header = () => {
     </header>
   )
 }
-
-export default Header

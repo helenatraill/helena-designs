@@ -79,12 +79,33 @@ export default function Footer() {
                 <a rel="noopener" target="_blank" href="https://www.tiktok.com/@helenatraill">
                   <svg width="36" height="36" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
                     <title>TikTok</title>
-                    <g fill="none" fill-rule="evenodd">
+                    <g fill="none" fillRule="evenodd">
                       <path
                         fill="#000"
                         d="M38.077 15.854c-2.008-.06-3.827-1.02-5.198-2.307A7.507 7.507 0 0 1 30.562 8h-5.589v20.83c0 3.513-2.096 5.588-4.696 5.588a4.699 4.699 0 1 1 0-9.396c.517.004 1.03.095 1.518.268V19.6a7.023 7.023 0 0 0-1.518-.16 10.282 10.282 0 1 0 10.285 10.28V18.832c2.166 1.51 4.753 2.208 7.515 2.255v-5.233Z"
                       />
                     </g>
+                  </svg>
+                </a>
+              </li>
+
+              <li>
+                <a rel="noopener" target="_blank" href="https://fastthinkingfounder.substack.com/">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    imageRendering="optimizeQuality"
+                    shapeRendering="geometricPrecision"
+                    textRendering="geometricPrecision"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 448 511.471">
+                    <title>Substack</title>
+                    <path
+                      fill="#000"
+                      d="M0 0h448v62.804H0V0zm0 229.083h448v282.388L223.954 385.808 0 511.471V229.083zm0-114.542h448v62.804H0v-62.804z"
+                    />
                   </svg>
                 </a>
               </li>

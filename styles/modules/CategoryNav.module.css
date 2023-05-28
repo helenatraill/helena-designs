@@ -10,6 +10,17 @@
   & > li > a {
     font-weight: bold;
     text-decoration: none;
+
+    &[aria-current=page] {
+      position: relative;
+
+      &::before {
+        color: #5a8216;
+        content: '•';
+        left: -0.7em;
+        position: absolute;
+      }
+    }
   }
 
   @media (min-width: 768px) {
