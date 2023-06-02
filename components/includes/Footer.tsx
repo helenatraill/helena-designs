@@ -21,8 +21,6 @@ export default function Footer() {
             </ul>
 
             <ul className={styles['social-links']}>
-              <li>Say hi</li>
-
               <li>
                 <a rel="noopener" target="_blank" href="https://instagram.com/helenatraill">
                   <svg xmlns="http://www.w3.org/2000/svg" width="27.52" height="27.53" viewBox="0 0 27.52 27.53">
