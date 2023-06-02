@@ -88,7 +88,7 @@ export default function Footer() {
               </li>
 
               <li>
-                <a rel="noopener" target="_blank" href="https://fastthinkingfounder.substack.com/">
+                <a rel="noopener" target="_blank" href="https://theideasmachine.substack.com/">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fillRule="evenodd"
