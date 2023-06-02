@@ -6,6 +6,16 @@
   & .logo {
     grid-column: 1 / 3;
 
+    & > a {
+      display: block;
+      margin: 0 auto;
+
+      & > svg {
+        height: 73.6px;
+        width: 125px;
+      }
+    }
+
     @media (min-width: 1024px) {
       grid-column: 2 / 3;
       text-align: center;

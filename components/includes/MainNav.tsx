@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { client, MenuLocationEnum } from '@client'
 import styles from '@styles/modules/MainNav.module.css'
 
-const MainNav = () => {
+export default function MainNav() {
   const { menuItems } = client.useQuery()
   const links = menuItems({
     where: { location: MenuLocationEnum.PRIMARY },
@@ -22,5 +22,3 @@ const MainNav = () => {
     </>
   )
 }
-
-export default MainNav

@@ -21,8 +21,8 @@ export default function Posts() {
 
       <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 768: 2, 1024: 3 }}>
         <Masonry gutter={16}>
-          {posts.map(post => (
-            <article key={post.id ?? ''}>
+          {posts.map((post, index) => (
+            <article key={post.id ?? index}>
               <Link href={`/projects/${post.slug}`}>
                 <div className="image-wrapper">
                   <Image
