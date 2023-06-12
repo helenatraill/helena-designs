@@ -1,4 +1,4 @@
-.home {
+.four-oh-four {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -10,9 +10,10 @@
   max-width: 70ch;
   text-align: center;
 
-  & h1 {
+  & p {
       font-size: 2.25rem;
       font-size: clamp(1.5rem, 5vmin, 2.25rem);
+      font-weight: 700;
       line-height: 1.3;
       margin-bottom: var(--space-small);
     }

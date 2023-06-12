@@ -17,6 +17,7 @@ export default function PostLayout({ title, children }: { title: string; childre
 
         <meta name="theme-color" content="#ffffff" />
 
+        <link rel="icon" type="image/svg+xml" href="favicon.svg" />
         <link rel="icon" sizes="any" type="image/png" href="favicon.png" />
 
         <title>

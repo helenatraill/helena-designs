@@ -17,7 +17,8 @@ export default function Layout({ title, children }: { title: string; children: R
 
         <meta name="theme-color" content="#ffffff" />
 
-        <link rel="icon" sizes="any" type="image/png" href="favicon.png" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" sizes="any" type="image/png" href="/favicon.png" />
 
         <title>
           {title} - {generalSettings.title}

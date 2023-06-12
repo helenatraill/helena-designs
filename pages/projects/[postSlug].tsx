@@ -3,9 +3,7 @@ import { getNextStaticProps, is404 } from '@faustjs/next'
 import { GetStaticPropsContext } from 'next'
 import { client } from '@client'
 import styles from '@styles/modules/Post.module.css'
-import { CategoryNav } from '@components/includes'
 import Image from 'next/image'
-import Category from 'pages/archive/[categorySlug]'
 
 export default function Post() {
   const { usePost } = client
@@ -22,8 +20,8 @@ export default function Post() {
                 alt={post?.featuredImage?.node?.altText}
                 width={post?.featuredImage?.node?.mediaDetails?.width}
                 height={post?.featuredImage?.node?.mediaDetails?.height}
-                placeholder="blur"
-                blurDataURL={post?.featuredImage?.node?.sourceUrl()}
+                //placeholder="blur"
+                //blurDataURL={post?.featuredImage?.node?.sourceUrl()}
                 //objectFit="cover"
               />
             </div>

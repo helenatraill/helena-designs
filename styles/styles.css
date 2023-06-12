@@ -120,14 +120,17 @@ body {
 
 .btn {
   color: #fff;
+  display: block;
   font-size: 1rem;
   font-weight: bold;
+  margin: 0 auto;
   min-width: 2rem;
   padding: var(--space-xx-small) calc(var(--space-x-small) + 25px) var(--space-xx-small) var(--space-x-small);
   position: relative;
   text-decoration: none;
   text-transform: uppercase;
   transition: 0.25s;
+  width: fit-content;
 
   &:hover {
     color: #fff;

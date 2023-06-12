@@ -38,12 +38,23 @@
       flex-shrink: 0;
     
       & > a {
+        position: relative;
         text-decoration: none;
 
         &:hover {
           color: inherit;
           text-decoration: underline;
           text-underline-offset: 0.1em;
+        }
+
+        &[aria-current=page] {
+
+          &::before {
+            color: #fff;
+            content: '•';
+            left: -0.7em;
+            position: absolute;       
+          } 
         }
       }
     }

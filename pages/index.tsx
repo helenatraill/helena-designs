@@ -14,7 +14,7 @@ export default function Home() {
 
   return (
     <Layout title={page?.title()}>
-      <div className={styles['home']}>
+      <div className={styles.home}>
         <article className={styles.hi}>
           <Animate play delay={0.25} duration={3} start={{ opacity: 0 }} end={{ opacity: 1 }}>
             <div dangerouslySetInnerHTML={{ __html: page?.content() }} />
