@@ -23,7 +23,7 @@ export default function PostNav() {
     if (currentLink) {
       const containerWidth = containerRef.current.offsetWidth
       const currentLinkWidth = currentLink.offsetWidth
-      const scrollTo = currentLink.offsetLeft - containerWidth / 2 + currentLinkWidth / 2
+      const scrollTo = currentLink.offsetLeft - containerWidth / 2 - currentLinkWidth / 2
 
       containerRef.current.scrollTo({
         left: scrollTo,
